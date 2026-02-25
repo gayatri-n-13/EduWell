@@ -6,7 +6,7 @@ export default function ManageResources() {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
-    fetch('/api/resources')
+    fetch('https://eduwell-pb6s.onrender.com/api/resources')
       .then(res => res.json())
       .then(data => {
         setResources(data);
