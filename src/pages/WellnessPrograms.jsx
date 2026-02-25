@@ -9,18 +9,34 @@ export default function WellnessPrograms() {
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
-    const fetchData = async () => {
-      const headers = { 'x-user-id': user.id.toString() };
-      const [allRes, myRes] = await Promise.all([
-        fetch('/api/programs'),
-        fetch('/api/my-programs', { headers })
-      ]);
-      setPrograms(await allRes.json());
-      setMyPrograms(await myRes.json());
-      setLoading(false);
-    };
-    fetchData();
-  }, [user.id]);
+    const mockPrograms = [
+      {
+        id: 1,
+        title: "30-Day Mindfulness Reset",
+        description: "Build clarity and focus with daily guided practices.",
+        category: "Mental Health",
+        duration_days: 30
+      },
+      {
+        id: 2,
+        title: "Fitness Foundation Bootcamp",
+        description: "Strengthen your body with structured workouts.",
+        category: "Fitness",
+        duration_days: 21
+      },
+      {
+        id: 3,
+        title: "Sleep Optimization Journey",
+        description: "Transform your sleep habits for academic success.",
+        category: "Sleep",
+        duration_days: 14
+      }
+    ];
+  
+    setPrograms(mockPrograms);
+    setMyPrograms([]); // initially not enrolled
+    setLoading(false);
+  }, []);
 
   const handleEnroll = async (programId) => {
     const res = await fetch('/api/enroll', {

@@ -6,13 +6,48 @@ export default function ManageResources() {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
-    fetch('https://eduwell-pb6s.onrender.com/api/resources')
-      .then(res => res.json())
-      .then(data => {
-        setResources(data);
-      });
+    const data = [
+      {
+        id: 1,
+        title: "Managing Exam Stress",
+        description: "Tips for staying calm during finals.",
+        category: "Mental Health",
+        type: "article",
+        content_url: "https://example.com/stress",
+        is_published: 1
+      },
+      {
+        id: 2,
+        title: "10-Minute Morning Yoga",
+        description: "A quick routine to start your day.",
+        category: "Fitness",
+        type: "video",
+        content_url: "https://example.com/yoga",
+        is_published: 1
+      },
+      {
+        id: 3,
+        title: "Healthy Meal Prep for Students",
+        description: "Budget-friendly recipes.",
+        category: "Nutrition",
+        type: "pdf",
+        content_url: "https://example.com/mealprep",
+        is_published: 1
+      },
+      {
+        id: 4,
+        title: "Better Sleep Habits",
+        description: "Improve your academic performance with rest.",
+        category: "Sleep Improvement",
+        type: "article",
+        content_url: "https://example.com/sleep",
+        is_published: 1
+      }
+    ];
+  
+    setResources(data);
   }, []);
-
+  console.log("Resources:", resources);
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">

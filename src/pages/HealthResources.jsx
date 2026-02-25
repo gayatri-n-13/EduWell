@@ -9,12 +9,43 @@ export default function HealthResources() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://eduwell-pb6s.onrender.com/api/resources")
-      .then(res => res.json())
-      .then(data => {
-        setResources(data);
-        setLoading(false);
-      });
+    const mockResources = [
+      {
+        id: 1,
+        title: "Managing Exam Stress",
+        description: "Tips for staying calm during finals.",
+        category: "Mental Health",
+        type: "article",
+        content_url: "#"
+      },
+      {
+        id: 2,
+        title: "10-Minute Morning Yoga",
+        description: "A quick routine to start your day.",
+        category: "Fitness",
+        type: "video",
+        content_url: "#"
+      },
+      {
+        id: 3,
+        title: "Healthy Meal Prep for Students",
+        description: "Budget-friendly recipes.",
+        category: "Nutrition",
+        type: "pdf",
+        content_url: "#"
+      },
+      {
+        id: 4,
+        title: "Better Sleep Habits",
+        description: "Improve academic performance with rest.",
+        category: "Sleep Improvement",
+        type: "article",
+        content_url: "#"
+      }
+    ];
+  
+    setResources(mockResources);
+    setLoading(false);
   }, []);
 
   const categories = ['All', 'Mental Health', 'Fitness', 'Nutrition', 'Sleep Improvement'];
