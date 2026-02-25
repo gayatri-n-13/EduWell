@@ -57,8 +57,8 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-6xl md:text-8xl font-serif font-medium text-white mb-6 tracking-tight leading-tight drop-shadow-lg">
-            Your Path to Better 🐚
-            <span className="block italic text-white/50 mt-2">Health & Wellness 🌊</span>
+            Your Path to Better 
+            <span className="block italic text-white/50 mt-2">Health & Wellness </span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 font-serif italic mb-12 max-w-2xl mx-auto leading-relaxed">
