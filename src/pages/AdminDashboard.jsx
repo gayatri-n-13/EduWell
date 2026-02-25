@@ -9,16 +9,16 @@ export default function AdminDashboard() {
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
-    fetch('/api/admin/stats', {
-      headers: { 'x-user-id': user.id.toString() }
-    })
-      .then(res => res.json())
-      .then(data => {
-        setStats(data);
-        setLoading(false);
-      });
-  }, [user.id]);
-
+    const mockStats = {
+      totalUsers: 1240,
+      totalResources: 48,
+      totalEnrollments: 872,
+      totalAppointments: 156
+    };
+  
+    setStats(mockStats);
+    setLoading(false);
+  }, []);
   const chartData = [
     { name: 'Mon', users: 400, enrollments: 240 },
     { name: 'Tue', users: 300, enrollments: 139 },
