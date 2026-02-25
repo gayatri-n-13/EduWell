@@ -9,7 +9,7 @@ export default function HealthResources() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/resources')
+    fetch("https://eduwell-pb6s.onrender.com/api/resources")
       .then(res => res.json())
       .then(data => {
         setResources(data);
